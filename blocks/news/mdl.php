@@ -8,7 +8,7 @@ return <<<HTML
   <li class="_menu_1_li">44444444444444444</li>
   <li class="_menu_1_li">55555555555555555</li>
   <li class="_menu_1_li">66666666666666666</li>
-  <li class="_menu_1_li">777------</li>
+  <li class="_menu_1_li">777------88888</li>
 </ul>
 HTML;
 
