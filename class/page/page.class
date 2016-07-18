@@ -1,0 +1,33 @@
+<?php
+
+class Page
+{
+  public static $title    = "";
+  public static $js    = array();
+  public static $css   = array();
+
+  public static function get()
+  {
+    $html = <<<HTML
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>{self::$title}</title> 
+</head>
+<body style="height: 100%;">
+    <div id="content">
+        Контент        
+    </div>
+    <div id="main">
+        Контент        
+    </div>
+</body>      
+</html>
+HTML;
+    echo $html;
+  }
+  
+  
+
+}

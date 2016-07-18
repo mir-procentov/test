@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,QAAY;EAAE,KAAK,ECAX,IAAI;;ADCZ,WAAY;EAAE,KAAK,ECAV,OAAmB;EDAE,MAAM,ECKrB,iCAAuB",
+"sources": ["../blocks/news/_mdl.scss","_var.scss"],
+"names": [],
+"file": "style.css"
+}

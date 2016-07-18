@@ -1,0 +1,40 @@
+<?php
+
+class Controller
+{
+  private static $root      = "";
+  private static $uri       = "";
+  public static  $pageType  = "404";
+
+  public static function init()
+  {
+    self::$root = $_SERVER['DOCUMENT_ROOT'];
+    self::$uri  = $_SERVER['DOCUMENT_URI'];
+    //echo "__init ".Controller::$uri." <br>";
+  }
+
+  public static function getPage()
+  {
+    $pageTypes = array();
+    $pageTypes['main']              = '/^(\/|)$/us';
+    $pageTypes['news']              = '/^(\/news\/)$/us';
+    $pageTypes['deposits_of_city']  = '/^\/banks\/gorod-(?P<city_code>\w+)\/vklady\.html$/us';
+
+    foreach ($pageTypes as $type => $pattern) {
+      if (preg_match($pattern, self::$uri, $match)) {
+        print_r($match);
+        self::$pageType = $type;
+        break;
+      }
+    }
+
+    $pageControllerFileName = self::$root."/page_controller/".self::$pageType."/controller.php";
+    if (file_exists($pageControllerFileName)) {
+      include_once($pageControllerFileName);
+    }
+
+    //echo "__getPage ".Controller::$pageType." <br>";
+  }
+
+
+}
